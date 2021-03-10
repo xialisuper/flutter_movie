@@ -1,23 +1,21 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_movie/app/modules/main/controllers/main_controller.dart';
+import 'package:flutter_movie/app/modules/main/controllers/bottom_tab_bar_controller.dart';
+
 import 'package:get/get.dart';
 
-class BottomTabBar extends StatelessWidget {
-  const BottomTabBar({
-    Key key,
-    @required this.c,
-  }) : super(key: key);
-
-  final MainController c;
-  void _tabBarTapped(int value) => c.changeCurrentIndex(value);
+class BottomTabBar extends GetView<BottomTabBarController> {
+  final BottomTabBarController bottomTabBarController =
+      Get.put(BottomTabBarController());
+  void _tabBarTapped(int value) =>
+      bottomTabBarController.changeCurrentIndex(value);
 
   @override
   Widget build(BuildContext context) {
     return Obx(
       () => CupertinoTabBar(
         onTap: _tabBarTapped,
-        currentIndex: c.currentTabBarIndex.value,
+        currentIndex: bottomTabBarController.currentTabBarIndex.value,
         items: [
           BottomNavigationBarItem(
             //TODO: 找到对应的图片,完善tabbar
