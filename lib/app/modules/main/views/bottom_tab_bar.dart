@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_movie/app/modules/main/controllers/bottom_tab_bar_controller.dart';
-
 import 'package:get/get.dart';
 
 class BottomTabBar extends GetView<BottomTabBarController> {
@@ -17,7 +16,7 @@ class BottomTabBar extends GetView<BottomTabBarController> {
         onTap: _tabBarTapped,
         currentIndex: bottomTabBarController.currentTabBarIndex.value,
         items: [
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
             //TODO: 找到对应的图片,完善tabbar
             activeIcon: ImageIcon(
                 AssetImage("images/icons/baseline_movie_black_36pt.png")),
@@ -26,15 +25,15 @@ class BottomTabBar extends GetView<BottomTabBarController> {
             ),
             label: '首页',
           ),
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
               icon: ImageIcon(
                   AssetImage("images/icons/outline_movie_black_36pt.png")),
               label: '电影'),
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
               icon: ImageIcon(
                   AssetImage("images/icons/outline_movie_black_36pt.png")),
               label: '搜索'),
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
               icon: ImageIcon(
                   AssetImage("images/icons/outline_movie_black_36pt.png")),
               label: '我的'),
