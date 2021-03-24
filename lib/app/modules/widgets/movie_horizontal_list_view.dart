@@ -43,7 +43,7 @@ class _ListViewCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimationConfiguration.staggeredList(
       position: index,
-      duration: const Duration(milliseconds: 375),
+      duration: const Duration(milliseconds: 1000),
       child: SlideAnimation(
         horizontalOffset: 50.0,
         child: FadeInAnimation(
