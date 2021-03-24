@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter_movie/app/modules/home/controllers/home_controller.dart';
 import 'package:flutter_movie/app/modules/main/views/comming_soon_view.dart';
 import 'package:get/get.dart';
@@ -7,7 +6,7 @@ import 'package:get/get.dart';
 class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
-    final HomeController mainController = Get.put(HomeController());
+    final HomeController mainController = Get.put(HomeController())!;
     //正在热映  即将上映
 
     //最近热门电影  热门,最新,豆瓣高分...
@@ -23,9 +22,14 @@ class HomeView extends GetView<HomeController> {
     return Scaffold(
       body: SingleChildScrollView(
         child: SafeArea(
-          top: true,
           child: Column(
-            children: [CommingSoonView()],
+            children: const [
+              CommingSoonView(totalHeight: 250),
+              CommingSoonView(totalHeight: 250),
+              CommingSoonView(totalHeight: 250),
+              CommingSoonView(totalHeight: 250),
+              CommingSoonView(totalHeight: 250),
+            ],
           ),
         ),
       ),
