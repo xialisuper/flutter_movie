@@ -10,10 +10,12 @@ void main() {
   //   // Build our app and trigger a frame.
   //   await tester.pumpWidget(MyApp());
 
+import 'package:flutter_movie/main.dart';
   //   // Verify that our counter starts at 0.
   //   expect(find.text('0'), findsOneWidget);
   //   expect(find.text('1'), findsNothing);
 
+void main() {
   //   // Tap the '+' icon and trigger a frame.
   //   await tester.tap(find.byIcon(Icons.add));
   //   await tester.pump();
